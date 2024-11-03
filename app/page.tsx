@@ -1,20 +1,30 @@
-import Footer from "../components/Footer";
-import Chat from "../components/Chat";
+// import Footer from "../components/Footer";
+// import Chat from "../components/Chat";
+
+// import Image from 'next/image';
 export default function Home() {
   return (
-    <div>
-    <div className="min-h-screen bg-gradient-to-r from-violet-500 to-fuchsia-500 flex items-center justify-center">
+    <div className="relative min-h-screen flex items-center justify-center">
+      {/* //Background image with overlay */}
 
-      <div className="flex flex-col items-center">
-      <img src="/car_image.jpg" alt="Car" className=" w-full max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl rounded-lg shadow-lg" />
-      <h1 className="text-4xl font-bold mt-6 text-white">
-        Welcome to the TechGreetings Car Suggestion Chatbot.
-      </h1>
-       <p className="text-2xl text-white">Here you will find a best car that meet your requirements</p>
-       </div>
-    </div>
-    <Chat />
-    <Footer />
+      <div className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: `url('/Elantra.png')`,
+          filter: 'brightness(0.5)', // darkens the image for an aggrassive effect
+        }} />
+      {/* Content overlay */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center">
+          <h1 className="text-4xl font-bold text-white mb-4">
+            Welcome to the TechGreetings<br /> Car Suggestion Chatbot
+          </h1>
+          <p className="text-2xl text-white mb-8">
+            Find the best car that meets your requirements
+          </p>
+          </div>
+     {/* <Chat /> */}
+
+      {/* <Footer /> */} 
+        {/* </div> */}
     </div>
   );
 }
